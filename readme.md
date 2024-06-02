@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Game Guess API is a backend service for a word guessing game. It provides endpoints to retrieve a list of words that players can use to play the game.
+The Game Guess API is a backend service for a word guessing game. It provides endpoints to retrieve a list of words or a random word that players can use to play the game.
 
 ## Installation
 
@@ -45,6 +45,21 @@ Response:
     "id": "60b8d295f8d4d90015db7f26",
     "word": "FANCY"
   }
+  ...
+]
+```
+
+> GET /api/random-word
+> Retrieves a random word.
+
+Response:
+
+```bash
+[
+  {
+    "id": "60b8d295f8d4d90015db7f25",
+    "word": "RADIO"
+  },
 ]
 ```
 

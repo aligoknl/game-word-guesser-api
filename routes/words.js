@@ -1,16 +1,10 @@
 import express from "express";
-import Word from "../models/Word.js";
-
+import { getWords, getRandomWord } from "../controller/word.js";
 const router = express.Router();
 
 // Route to get all words
-router.get("/", async (req, res) => {
-  try {
-    const words = await Word.find();
-    res.json(words);
-  } catch (error) {
-    res.status(500).send("Server error");
-  }
-});
+router.get("/words", getWords);
+
+router.get("/random-word", getRandomWord);
 
 export default router;

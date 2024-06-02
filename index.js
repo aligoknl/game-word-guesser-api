@@ -38,7 +38,7 @@ app.use(cookieParser());
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/words", wordsRoute);
+app.use("/api", wordsRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
