@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import wordsRoute from "./routes/words.js";
+import scoresRoute from "./routes/scores.js";
 import words from "./utils/wordList.js";
 import Word from "./models/Word.js";
 import cors from "cors";
@@ -38,7 +39,8 @@ app.use(cookieParser());
 app.use(cors());
 app.use(express.json());
 
-app.use("/api", wordsRoute);
+app.use("/api/words", wordsRoute);
+app.use("/api/scores", scoresRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
