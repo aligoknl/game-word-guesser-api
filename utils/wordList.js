@@ -104,7 +104,6 @@ const words = [
   "QUAKE",
   "RANCH",
   "SALTY",
-  "THEIR",
   "UNIFY",
   "VALET",
   "ABIDE",
