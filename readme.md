@@ -30,46 +30,109 @@ npm run dev
 
 ## Endpoints
 
-> GET /api/words
-> Retrieves a list of words.
+### GET /api/words/all-words
+
+Retrieves a list of words.
+
+**Response:**
+
+```json
+{
+  "id": "60b8d295f8d4d90015db7f25",
+  "word": "RADIO"
+},
+{
+  "id": "60b8d295f8d4d90015db7f26",
+  "word": "MODAL"
+}
+```
+
+### GET /api/words/random-word
+
+Retrieves a random word.
+
+**Response:**
+
+```json
+{
+  "id": "60b8d295f8d4d90015db7f25",
+  "word": "RADIO"
+}
+```
+
+### POST /api/words/validate
+
+Validate the word
+
+Request Body:
+
+```json
+{
+  "word": "string"
+}
+```
 
 Response:
 
-```bash
+```json
+{
+  "isValid": "boolean"
+}
+```
+
+### GET /api/scores/top-scores
+
+Retrieves the top 10 scores
+
+Response:
+
+```json
 [
   {
-    "id": "60b8d295f8d4d90015db7f25",
-    "word": "MODAL"
+    "username": "string",
+    "score": "number"
   },
   {
-    "id": "60b8d295f8d4d90015db7f26",
-    "word": "FANCY"
+    "username": "string",
+    "score": "number"
   }
   ...
 ]
 ```
 
-> GET /api/random-word
-> Retrieves a random word.
+### POST /api/scores/save-score
+
+Save a score for a user
+
+Request Body:
+
+```json
+{
+  "username": "string",
+  "score": "number"
+}
+```
 
 Response:
 
-```bash
-[
-  {
-    "id": "60b8d295f8d4d90015db7f25",
-    "word": "RADIO"
-  },
-]
+```json
+{
+  "message": "Score saved successfully"
+}
 ```
 
 ## Environment Variables
 
 The application requires the following environment variables to be set:
 
-MONGO: The connection string for your MongoDB database.
-Create a .env file in the root directory of the project and add your environment variables:
+- `MONGO`: The connection string for your MongoDB database.
+
+Create a `.env` file in the root directory of the project and add your environment variables:
 
 ```bash
 MONGO=your_mongodb_connection_string
 ```
+
+## License
+
+This project is licensed under the MIT License.
